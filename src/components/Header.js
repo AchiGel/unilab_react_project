@@ -2,6 +2,7 @@ import Navbar from "./Navbar";
 import styled from "styled-components";
 import backgroundImg from "../assets/desktop_images/18b0e57c5f6c838c052271193834fa9e.png";
 import Button from "./Button";
+import { useEffect, useState } from "react";
 
 const HeaderContainer = styled.header`
   background-image: url(${backgroundImg});
@@ -50,10 +51,26 @@ const Heading2 = styled.h2`
 `;
 
 function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <HeaderContainer>
       <HeaderOverlay>
-        <Navbar />
+        <Navbar scrolled={scrolled} />
         <HeaderOffer>
           <Heading3>Visit Mountains In</Heading3>
           <Heading2>ITALY</Heading2>

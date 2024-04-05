@@ -1,5 +1,5 @@
 import user from "../assets/icons/User_01.png";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const NavbarNavigation = styled.nav`
   position: fixed;
@@ -9,6 +9,14 @@ const NavbarNavigation = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.3s ease;
+  ${(props) =>
+    props.scrolled &&
+    css`
+      width: 100%;
+      padding-inline: 8%;
+      background-color: #eae9e9;
+    `};
 `;
 
 const NavbarLogo = styled.span`
@@ -18,6 +26,12 @@ const NavbarLogo = styled.span`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  ${(props) =>
+    props.scrolled &&
+    css`
+      color: #424244;
+    `};
 `;
 
 const NavbarItems = styled.ul`
@@ -25,6 +39,12 @@ const NavbarItems = styled.ul`
   align-items: center;
   gap: 40px;
   color: #fff;
+
+  ${(props) =>
+    props.scrolled &&
+    css`
+      color: #424244;
+    `};
 `;
 
 const NavbarItem = styled.li`
@@ -33,20 +53,28 @@ const NavbarItem = styled.li`
   letter-spacing: 1.4px;
 `;
 
-function Navbar() {
+const NavbarUser = styled.img`
+  ${(props) =>
+    props.scrolled &&
+    css`
+      filter: invert(1);
+    `};
+`;
+
+function Navbar({ scrolled }) {
   return (
-    <NavbarNavigation>
+    <NavbarNavigation scrolled={scrolled}>
       <div className="navbar-logo">
-        <NavbarLogo>ExploreEra</NavbarLogo>
+        <NavbarLogo scrolled={scrolled}>ExploreEra</NavbarLogo>
       </div>
-      <NavbarItems>
+      <NavbarItems scrolled={scrolled}>
         <NavbarItem>Home</NavbarItem>
         <NavbarItem>About us</NavbarItem>
         <NavbarItem>Blogs</NavbarItem>
         <NavbarItem>Our services</NavbarItem>
         <NavbarItem>Our offers</NavbarItem>
         <NavbarItem>
-          <img src={user} alt="userIcon" />
+          <NavbarUser src={user} scrolled={scrolled} />
         </NavbarItem>
       </NavbarItems>
     </NavbarNavigation>
