@@ -10,7 +10,7 @@ const HeaderContainer = styled.header`
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-  margin-inline: -10.4%;
+  margin-inline: -10.7%;
   padding-inline: 8.8%;
 `;
 
