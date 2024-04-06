@@ -1,14 +1,16 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const ServiceCardContainer = styled.div`
   max-width: 380px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 10px;
 `;
 
 const ServiceCardImg = styled.img`
   width: 100%;
+  height: 248px;
   object-fit: cover;
   border-radius: 20px;
 `;

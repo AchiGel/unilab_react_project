@@ -4,15 +4,21 @@ import Offers from "./Offers";
 import Blogs from "./Blogs";
 import Book from "./Book";
 
+import styled from "styled-components";
+
+const MainContainer = styled.main`
+  background-color: #f6f6f6;
+`;
+
 function Main() {
   return (
-    <main>
+    <MainContainer>
       <Services />
       <Video />
       <Offers />
       <Blogs />
       <Book />
-    </main>
+    </MainContainer>
   );
 }
 
