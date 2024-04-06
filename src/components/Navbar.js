@@ -19,19 +19,24 @@ const NavbarNavigation = styled.nav`
     `};
 `;
 
-const NavbarLogo = styled.span`
+const NavbarLogo = styled.button`
   color: #fff;
   font-family: "Kalnia";
   font-size: 48px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
-
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: all 0.2s ease;
   ${(props) =>
     props.scrolled &&
     css`
       color: #424244;
     `};
+  &:hover {
+    cursor: pointer;
+    scale: 80%;
+  }
 `;
 
 const NavbarItems = styled.ul`
@@ -51,6 +56,11 @@ const NavbarItem = styled.li`
   font-size: 28px;
   font-weight: 400;
   letter-spacing: 1.4px;
+  transition: all 0.2s ease;
+  &:hover {
+    cursor: pointer;
+    scale: 80%;
+  }
 `;
 
 const NavbarUser = styled.img`
@@ -59,6 +69,11 @@ const NavbarUser = styled.img`
     css`
       filter: invert(1);
     `};
+  &:hover {
+    filter: invert(47%) sepia(60%) saturate(6885%) hue-rotate(16deg)
+      brightness(91%) contrast(101%);
+    cursor: pointer;
+  }
 `;
 
 function Navbar({ scrolled }) {

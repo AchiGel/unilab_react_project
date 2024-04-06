@@ -14,6 +14,7 @@ const StyledButton = styled.button`
         font-family: "Roboto";
         font-size: 32px;
         font-weight: 600;
+        transition: all 0.2s ease;
       `;
     } else if (size === "medium") {
       return css`
@@ -27,9 +28,14 @@ const StyledButton = styled.button`
         font-family: "Roboto";
         font-size: 24px;
         font-weight: 500;
+        transition: all 0.2s ease;
       `;
     }
   }}
+
+  &:hover {
+    background-color: #c85100;
+  }
 `;
 
 function Button({ buttonText, size }) {

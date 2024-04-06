@@ -48,6 +48,12 @@ function Services() {
 
   function handleSeeAll() {
     setSeeAllClicked(true);
+    document.body.classList.add("modal-open");
+  }
+
+  function closeModal() {
+    setSeeAllClicked(false);
+    document.body.classList.remove("modal-open");
   }
 
   return (
@@ -57,7 +63,7 @@ function Services() {
         marginBottom: "92px",
       }}
     >
-      {seeAllClicked && <Modal data={servicesData} />}
+      {seeAllClicked && <Modal data={servicesData} closeModal={closeModal} />}
       <ServicesHeader>Discover Our Services</ServicesHeader>
       <ServicesDescrib>
         ExploreEra provides a one-stop solution for individuals seeking

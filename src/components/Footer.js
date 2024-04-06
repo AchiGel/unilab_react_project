@@ -20,11 +20,19 @@ const FooterColumn = styled.div`
   max-width: 282px;
 `;
 
-const FooterLogo = styled.h3`
+const FooterLogo = styled.button`
   color: #424244;
   font-family: "Kalnia";
   font-size: 48px;
   font-weight: 500;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: all 0.2s ease;
+  &:hover {
+    cursor: pointer;
+    scale: 80%;
+  }
 `;
 
 const FooterLinksList = styled.ul`
