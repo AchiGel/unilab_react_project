@@ -77,7 +77,7 @@ const NavbarUser = styled.img`
   }
 `;
 
-function Navbar({ scrolled }) {
+function Navbar({ scrolled, openSignPopUp }) {
   return (
     <NavbarNavigation scrolled={scrolled}>
       <div className="navbar-logo">
@@ -89,7 +89,7 @@ function Navbar({ scrolled }) {
         <NavbarItem>Blogs</NavbarItem>
         <NavbarItem>Our services</NavbarItem>
         <NavbarItem>Our offers</NavbarItem>
-        <NavbarItem>
+        <NavbarItem onClick={openSignPopUp}>
           <NavbarUser src={user} scrolled={scrolled} />
         </NavbarItem>
       </NavbarItems>

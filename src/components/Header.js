@@ -3,6 +3,7 @@ import styled from "styled-components";
 import backgroundImg from "../assets/desktop_images/18b0e57c5f6c838c052271193834fa9e.png";
 import Button from "./Button";
 import { useEffect, useState } from "react";
+import SignPopUp from "./SignPopUp";
 
 const HeaderContainer = styled.header`
   background-image: url(${backgroundImg});
@@ -52,6 +53,8 @@ const Heading2 = styled.h2`
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [signClicked, setSignClicked] = useState(false);
+
   useEffect(() => {
     function handleScroll() {
       if (window.scrollY > 20) {
@@ -67,10 +70,16 @@ function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  function openSignPopUp() {
+    setSignClicked(!signClicked);
+  }
+
   return (
     <HeaderContainer>
       <HeaderOverlay>
-        <Navbar scrolled={scrolled} />
+        <Navbar scrolled={scrolled} openSignPopUp={openSignPopUp} />
+        {signClicked && <SignPopUp />}
         <HeaderOffer>
           <Heading3>Visit Mountains In</Heading3>
           <Heading2>ITALY</Heading2>
