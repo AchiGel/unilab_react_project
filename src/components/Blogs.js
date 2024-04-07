@@ -18,7 +18,7 @@ const BlogsGrid = styled.div`
 
 function Blogs() {
   return (
-    <section>
+    <section style={{ marginBottom: "60px" }}>
       <BlogsHeader>Blogs</BlogsHeader>
       <BlogsGrid>
         {blogsData.map((item) => (
