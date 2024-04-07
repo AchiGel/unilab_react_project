@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import video from "../assets/video/3571264-uhd_3840_2160_30fps.mp4";
+import video from "../assets/video/6394054-uhd_4096_2048_24fps.mp4";
 
 const VideoHeader = styled.h2`
   color: #424244;
