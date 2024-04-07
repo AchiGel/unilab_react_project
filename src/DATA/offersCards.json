@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "imgLink": "images/barcelona.png",
+    "title": "Barcelona, Spain",
+    "description": "2 adults, 7 days",
+    "price": "2400$"
+  },
+  {
+    "id": 2,
+    "imgLink": "images/rome.png",
+    "title": "Rome, Italy",
+    "description": "2 adults, 3 days",
+    "price": "1800$"
+  },
+  {
+    "id": 3,
+    "imgLink": "images/paris.png",
+    "title": "Paris, France",
+    "description": "2 adults, 4 days",
+    "price": "2100$"
+  },
+  {
+    "id": 4,
+    "imgLink": "images/luxor.png",
+    "title": "Luxor City, Egypt",
+    "description": "2 adults, 3 days",
+    "price": "800$"
+  },
+  {
+    "id": 5,
+    "imgLink": "images/barcelona.png",
+    "title": "Sydney, Australia",
+    "description": "2 adults, 7 days",
+    "price": "3200$"
+  },
+  {
+    "id": 6,
+    "imgLink": "images/barcelona.png",
+    "title": "London, UK",
+    "description": "2 adults, 5 days",
+    "price": "2200$"
+  },
+  {
+    "id": 7,
+    "imgLink": "images/barcelona.png",
+    "title": "Dubai, UAE",
+    "description": "2 adults, 7 days",
+    "price": "3500$"
+  },
+  {
+    "id": 8,
+    "imgLink": "images/barcelona.png",
+    "title": "Bangkok, Thailand",
+    "description": "2 adults, 7 days",
+    "price": "1800$"
+  },
+  {
+    "id": 9,
+    "imgLink": "images/barcelona.png",
+    "title": "Berlin, Germany",
+    "description": "2 adults, 6 days",
+    "price": "2100$"
+  },
+  {
+    "id": 10,
+    "imgLink": "images/barcelona.png",
+    "title": "Rio de Janeiro, Brazil",
+    "description": "2 adults, 7 days",
+    "price": "2700$"
+  },
+  {
+    "id": 11,
+    "imgLink": "images/barcelona.png",
+    "title": "Istanbul, Turkey",
+    "description": "2 adults, 6 days",
+    "price": "2400$"
+  },
+  {
+    "id": 12,
+    "imgLink": "images/barcelona.png",
+    "title": "Cape Town, South Africa",
+    "description": "2 adults, 7 days",
+    "price": "3000$"
+  },
+  {
+    "id": 13,
+    "imgLink": "images/barcelona.png",
+    "title": "Seoul, South Korea",
+    "description": "2 adults, 6 days",
+    "price": "2600$"
+  }
+]

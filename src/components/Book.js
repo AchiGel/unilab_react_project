@@ -23,9 +23,14 @@ const BookSelectGrid = styled.div`
 `;
 
 const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
+  { value: "Rome, Italy", label: "Rome, Italy" },
+  { value: "Luxor City, Egypt", label: "Luxor City, Egypt" },
+  { value: "Paris, France", label: "Paris, France" },
+  { value: "Barcelona, Spain", label: "Barcelona, Spain" },
+  { value: "Tsavo, Kenya", label: "Tsavo, Kenya" },
+  { value: "Prague, Chequia", label: "Prague, Chequia" },
+  { value: "Shanghai, China", label: "Shanghai, China" },
+  { value: "Hanauma, Hawaii", label: "Hanauma, Hawaii" },
 ];
 
 function Book() {
@@ -41,14 +46,10 @@ function Book() {
       <BookForm>
         <BookFormHeader>Ready To Book A Trip?</BookFormHeader>
         <BookSelectGrid>
-          <Select
-            styles={{ padding: "20px" }}
-            options={options}
-            placeholder="Your starting location"
-          />
-          <Select options={options} placeholder="Choose a tour offer" />
-          <Select options={options} placeholder="Choose date" />
-          <Select options={options} placeholder="Persons" />
+          <Select options={options} placeholder="Your starting location" />
+          <Select placeholder="Choose a tour offer" />
+          <Select placeholder="Choose date" />
+          <Select placeholder="Persons" />
         </BookSelectGrid>
         <Button size="medium" buttonText="Book Now" />
       </BookForm>
