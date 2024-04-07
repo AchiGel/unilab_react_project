@@ -6,7 +6,9 @@ const NavbarNavigation = styled.nav`
   z-index: 999;
   top: 0;
   height: 105px;
-  width: 84%;
+  width: 100%;
+  margin-inline: -8.8%;
+  padding-inline: 8%;
   display: flex;
   align-items: center;
   justify-content: space-between;

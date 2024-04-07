@@ -5,6 +5,7 @@ import Blogs from "./Blogs";
 import Book from "./Book";
 
 import styled from "styled-components";
+import LandingBackground from "./LandingBackground";
 
 const MainContainer = styled.main`
   background-color: #f6f6f6;
@@ -13,6 +14,7 @@ const MainContainer = styled.main`
 function Main() {
   return (
     <MainContainer>
+      <LandingBackground />
       <Services />
       <Video />
       <Offers />
