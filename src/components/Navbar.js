@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 
 const NavbarNavigation = styled.nav`
   position: fixed;
+  z-index: 999;
   top: 0;
   height: 105px;
   width: 84%;

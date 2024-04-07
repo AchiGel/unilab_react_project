@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "imgLink": "images/tibet.png",
+    "blogHeader": "Interesting Tibetan Traditions"
+  },
+  {
+    "id": 2,
+    "imgLink": "images/hawaii.png",
+    "blogHeader": "Are There Volcanos In Hawaii?"
+  },
+  {
+    "id": 3,
+    "imgLink": "images/iceland.png",
+    "blogHeader": "Winter in Iceland"
+  },
+  {
+    "id": 4,
+    "imgLink": "images/tibet.png",
+    "blogHeader": "Interesting Tibetan Traditions"
+  },
+  {
+    "id": 5,
+    "imgLink": "images/hawaii.png",
+    "blogHeader": "Are There Volcanos In Hawaii?"
+  },
+  {
+    "id": 6,
+    "imgLink": "images/iceland.png",
+    "blogHeader": "Winter in Iceland"
+  }
+]
