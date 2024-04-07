@@ -4,12 +4,14 @@ const OfferContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-right: 20px;
 `;
 
 const OfferImg = styled.img`
   object-fit: cover;
-  width: 380px;
-  height: 475.238px;
+  width: 100%;
+  height: 25rem;
+  max-height: 475.238px;
   border-radius: 20px;
 `;
 

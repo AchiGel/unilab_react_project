@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import video from "../assets/video/3571264-uhd_3840_2160_30fps.mp4";
+
 const VideoHeader = styled.h2`
   color: #424244;
   font-size: 40px;
@@ -11,8 +13,13 @@ function Video() {
   return (
     <section style={{ marginBottom: "60px" }}>
       <VideoHeader>Watch Our Memorable Trips</VideoHeader>
-      <video width="100%" height="724.377" controls>
-        <source src="./Videos/video1.mp4" type="video/mp4" />
+      <video
+        style={{ borderRadius: "20px", objectFit: "cover" }}
+        width="100%"
+        height="724.377"
+        controls
+      >
+        <source src={video} type="video/mp4" />
       </video>
     </section>
   );
