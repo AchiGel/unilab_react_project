@@ -1,29 +1,30 @@
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import Main from "./components/Main";
-import AuthentificationPage from "./components/AuthentificationPage";
+import SignInPage from "./components/SignInPage";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Main />,
-  },
-  {
-    path: "/signin",
-    element: <AuthentificationPage />,
-  },
-]);
+import RootLayout from "./laouts/RootLayout";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Main />} />
+      <Route path="sign-in" element={<SignInPage />} />
+    </Route>
+  )
+);
 
 function App() {
   return (
     <div className="App">
       <div className="wrapper">
-        <Header />
         <RouterProvider router={router} />
-        <Footer />
       </div>
     </div>
   );

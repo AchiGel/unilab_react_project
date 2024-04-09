@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import user from "../assets/icons/User_01.png";
 import styled, { css } from "styled-components";
 
@@ -83,16 +84,22 @@ function Navbar({ scrolled, openSignPopUp }) {
   return (
     <NavbarNavigation scrolled={scrolled}>
       <div className="navbar-logo">
-        <NavbarLogo scrolled={scrolled}>ExploreEra</NavbarLogo>
+        <NavLink to="/">
+          <NavbarLogo scrolled={scrolled}>ExploreEra</NavbarLogo>
+        </NavLink>
       </div>
       <NavbarItems scrolled={scrolled}>
-        <NavbarItem>Home</NavbarItem>
+        <NavbarItem>
+          <NavLink to="/">Home</NavLink>
+        </NavbarItem>
         <NavbarItem>About us</NavbarItem>
         <NavbarItem>Blogs</NavbarItem>
         <NavbarItem>Our services</NavbarItem>
         <NavbarItem>Our offers</NavbarItem>
         <NavbarItem onClick={openSignPopUp}>
-          <NavbarUser src={user} scrolled={scrolled} />
+          <NavLink to="sign-in">
+            <NavbarUser src={user} scrolled={scrolled} />
+          </NavLink>
         </NavbarItem>
       </NavbarItems>
     </NavbarNavigation>

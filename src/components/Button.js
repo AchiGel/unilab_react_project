@@ -30,6 +30,20 @@ const StyledButton = styled.button`
         font-weight: 500;
         transition: all 0.2s ease;
       `;
+    } else {
+      return css`
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: white;
+        padding: 10px;
+        background-color: #ff6700;
+        border-radius: 10px;
+        font-family: "Roboto";
+        font-size: 20px;
+        font-weight: 400;
+        transition: all 0.2s ease;
+      `;
     }
   }}
 
