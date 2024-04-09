@@ -60,6 +60,7 @@ const SignInFormLabelSpan = styled.span`
   color: rgba(66, 66, 68, 0.7);
   font-size: 16px;
   font-weight: 400;
+  margin-left: 20px;
 `;
 
 const SignInFormInput = styled.input`

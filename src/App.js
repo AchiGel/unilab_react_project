@@ -1,6 +1,7 @@
 import "./App.css";
 import Main from "./components/Main";
 import SignInPage from "./components/SignInPage";
+import SignUpPage from "./components/SignUpPage";
 
 import {
   createBrowserRouter,
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Main />} />
       <Route path="sign-in" element={<SignInPage />} />
+      <Route path="sign-up" element={<SignUpPage />} />
     </Route>
   )
 );

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import user from "../assets/icons/User_01.png";
 import styled, { css } from "styled-components";
 
@@ -81,27 +81,72 @@ const NavbarUser = styled.img`
 `;
 
 function Navbar({ scrolled, openSignPopUp }) {
+  const location = useLocation();
+  console.log(location.pathname);
+
   return (
     <NavbarNavigation scrolled={scrolled}>
-      <div className="navbar-logo">
-        <NavLink to="/">
-          <NavbarLogo scrolled={scrolled}>ExploreEra</NavbarLogo>
-        </NavLink>
-      </div>
-      <NavbarItems scrolled={scrolled}>
-        <NavbarItem>
-          <NavLink to="/">Home</NavLink>
-        </NavbarItem>
-        <NavbarItem>About us</NavbarItem>
-        <NavbarItem>Blogs</NavbarItem>
-        <NavbarItem>Our services</NavbarItem>
-        <NavbarItem>Our offers</NavbarItem>
-        <NavbarItem onClick={openSignPopUp}>
-          <NavLink to="sign-in">
-            <NavbarUser src={user} scrolled={scrolled} />
-          </NavLink>
-        </NavbarItem>
-      </NavbarItems>
+      {location.pathname === "/" && (
+        <>
+          <div className="navbar-logo">
+            <NavLink to="/">
+              <NavbarLogo scrolled={scrolled}>ExploreEra</NavbarLogo>
+            </NavLink>
+          </div>
+          <NavbarItems scrolled={scrolled}>
+            <NavbarItem>
+              <NavLink to="/">Home</NavLink>
+            </NavbarItem>
+            <NavbarItem>About us</NavbarItem>
+            <NavbarItem>Blogs</NavbarItem>
+            <NavbarItem>Our services</NavbarItem>
+            <NavbarItem>Our offers</NavbarItem>
+            <NavbarItem onClick={openSignPopUp}>
+              <NavbarUser src={user} scrolled={scrolled} />
+            </NavbarItem>
+          </NavbarItems>
+        </>
+      )}
+      {location.pathname === "/sign-in" && (
+        <>
+          <div className="navbar-logo">
+            <NavLink to="/">
+              <NavbarLogo style={{ color: "#424244" }}>ExploreEra</NavbarLogo>
+            </NavLink>
+          </div>
+          <NavbarItems>
+            <NavbarItem onClick={openSignPopUp}>
+              <NavbarUser
+                style={{
+                  filter:
+                    "invert(24%) sepia(8%) saturate(182%) hue-rotate(202deg) brightness(50%) contrast(93%)",
+                }}
+                src={user}
+              />
+            </NavbarItem>
+          </NavbarItems>
+        </>
+      )}
+      {location.pathname === "/sign-up" && (
+        <>
+          <div className="navbar-logo">
+            <NavLink to="/">
+              <NavbarLogo style={{ color: "#424244" }}>ExploreEra</NavbarLogo>
+            </NavLink>
+          </div>
+          <NavbarItems>
+            <NavbarItem onClick={openSignPopUp}>
+              <NavbarUser
+                style={{
+                  filter:
+                    "invert(24%) sepia(8%) saturate(182%) hue-rotate(202deg) brightness(50%) contrast(93%)",
+                }}
+                src={user}
+              />
+            </NavbarItem>
+          </NavbarItems>
+        </>
+      )}
     </NavbarNavigation>
   );
 }

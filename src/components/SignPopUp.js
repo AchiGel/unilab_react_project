@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const SignPopUpContainer = styled.div`
@@ -25,12 +26,16 @@ const SignPopUpButtons = styled.button`
   font-weight: 400;
 `;
 
-function SignPopUp() {
+function SignPopUp({ signClicked, setSignClicked }) {
   return (
     <SignPopUpContainer>
-      <SignPopUpButtons>Sign in</SignPopUpButtons>
-      <SignPopUpButtons>Sign in</SignPopUpButtons>
-      <SignPopUpButtons>Sign in</SignPopUpButtons>
+      <SignPopUpButtons onClick={() => setSignClicked(!signClicked)}>
+        <NavLink to="sign-in">Sign in</NavLink>
+      </SignPopUpButtons>
+      <SignPopUpButtons onClick={() => setSignClicked(!signClicked)}>
+        <NavLink to="sign-up">Sign up</NavLink>
+      </SignPopUpButtons>
+      <SignPopUpButtons>Sign out</SignPopUpButtons>
     </SignPopUpContainer>
   );
 }

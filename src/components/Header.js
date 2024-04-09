@@ -30,7 +30,9 @@ function Header() {
   return (
     <>
       <Navbar scrolled={scrolled} openSignPopUp={openSignPopUp} />
-      {signClicked && <SignPopUp />}
+      {signClicked && (
+        <SignPopUp signClicked={signClicked} setSignClicked={setSignClicked} />
+      )}
     </>
   );
 }
