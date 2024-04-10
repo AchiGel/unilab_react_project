@@ -75,9 +75,9 @@ const StyledButton = styled.button`
   }
 `;
 
-function Button({ toRedirect, buttonText, size }) {
+function Button({ toRedirect, buttonText, size, type, closeModal }) {
   return (
-    <StyledButton size={size}>
+    <StyledButton onClick={closeModal} type={type} size={size}>
       <NavLink to={toRedirect}>{buttonText}</NavLink>
     </StyledButton>
   );

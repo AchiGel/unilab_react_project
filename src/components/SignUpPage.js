@@ -4,6 +4,9 @@ import appleIcon from "../assets/icons/apple.png";
 import googleIcon from "../assets/icons/google.png";
 import gmailIcon from "../assets/icons/gmail.png";
 import Button from "./Button";
+import { useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
+import TermsModal from "./TermsModal";
 
 const SignUpPageOverlay = styled.div`
   width: 100%;
@@ -50,6 +53,15 @@ const SignUpMediaButton = styled.button`
   background: transparent;
 `;
 
+const InputsFields = styled.input`
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid #ff6700;
+  color: #424244;
+  font-size: 20px;
+  font-weight: 400;
+`;
+
 const SignUpFormLabel = styled.label`
   display: flex;
   flex-direction: column;
@@ -61,15 +73,6 @@ const SignUpFormLabelSpan = styled.span`
   font-size: 16px;
   font-weight: 400;
   margin-left: 20px;
-`;
-
-const SignUpFormInput = styled.input`
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid #ff6700;
-  color: #424244;
-  font-size: 20px;
-  font-weight: 400;
 `;
 
 const BorderDiv = styled.div`
@@ -90,42 +93,139 @@ const TermsText = styled.span`
   font-weight: 400;
 `;
 
+const ErrorMessage = styled.span`
+  margin-left: 20px;
+  color: #f00;
+  font-size: 16px;
+  font-weight: 400;
+`;
+
+const TermsLink = styled.span`
+  color: #c85100;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+`;
+
 function SignUpPage() {
   const icons = [fbIcon, appleIcon, googleIcon, gmailIcon];
+  const [formData, setFormData] = useState({});
+  const [termsClicked, setTermsClicked] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  useEffect(() => {
+    console.log(formData);
+    localStorage.setItem("formData", [formData.email, formData.password]);
+  }, [formData]);
+
+  const onSubmit = (data) => {
+    setFormData(data);
+  };
+
+  function closeModal() {
+    setTermsClicked(false);
+    document.body.classList.remove("modal-open");
+  }
+
   return (
     <SignUpPageOverlay>
+      {termsClicked && <TermsModal closeModal={closeModal} />}
       <SignUpFormContainer>
-        <SignUpForm>
+        <SignUpForm onSubmit={handleSubmit(onSubmit)}>
           <SignUpFormLabel>
             <SignUpFormLabelSpan>First name</SignUpFormLabelSpan>
-            <SignUpFormInput type="text" placeholder="Enter your first name" />
+            <InputsFields
+              {...register("firstName", {
+                required: "First name is required",
+                validate: (value) => {
+                  if (value.length <= 4) {
+                    return "first name should be longer than 4 characters";
+                  }
+                },
+              })}
+              type="text"
+              placeholder="Enter your first name"
+            />
+            {errors.firstName && (
+              <ErrorMessage>{errors.firstName.message}</ErrorMessage>
+            )}
           </SignUpFormLabel>
           <SignUpFormLabel>
             <SignUpFormLabelSpan>Last name</SignUpFormLabelSpan>
-            <SignUpFormInput type="text" placeholder="Enter your last name" />
+            <InputsFields
+              {...register("lastName", {
+                required: "Last name is required",
+                validate: (value) => {
+                  if (value.length <= 4) {
+                    return "Last name should be longer than 4 characters";
+                  }
+                },
+              })}
+              type="text"
+              placeholder="Enter your last name"
+            />
+            {errors.lastName && (
+              <ErrorMessage>{errors.lastName.message}</ErrorMessage>
+            )}
           </SignUpFormLabel>
           <SignUpFormLabel>
             <SignUpFormLabelSpan>Email</SignUpFormLabelSpan>
-            <SignUpFormInput
+            <InputsFields
+              {...register("email", {
+                required: "Email is required",
+                validate: (value) => {
+                  if (!value.includes("@")) {
+                    return "Email must include @";
+                  }
+                },
+              })}
               type="email"
               placeholder="Enter your email address"
             />
+            {errors.email && (
+              <ErrorMessage>{errors.email.message}</ErrorMessage>
+            )}
           </SignUpFormLabel>
           <SignUpFormLabel>
             <SignUpFormLabelSpan>Password</SignUpFormLabelSpan>
-            <SignUpFormInput
+            <InputsFields
+              {...register("password", {
+                required: "password is required",
+                minLength: {
+                  value: 8,
+                  message: "Password must have at least 8 characters",
+                },
+              })}
               type="password"
               placeholder="Enter your password"
             />
+            {errors.password && (
+              <ErrorMessage>{errors.password.message}</ErrorMessage>
+            )}
           </SignUpFormLabel>
           <SignUpFormLabel>
             <SignUpFormLabelSpan>Confirm the password</SignUpFormLabelSpan>
-            <SignUpFormInput
+            <InputsFields
+              {...register("passwordConfirm", {
+                required: "Password re-enter is required",
+                minLength: {
+                  value: 8,
+                  message: "Password must have at least 8 characters",
+                },
+              })}
               type="password"
               placeholder="Re-enter your password"
             />
+            {errors.passwordConfirm && (
+              <ErrorMessage>{errors.passwordConfirm.message}</ErrorMessage>
+            )}
           </SignUpFormLabel>
-          <Button buttonText="Continue" size="sign" />
+          <Button type="submit" buttonText="Continue" size="sign" />
         </SignUpForm>
         <BorderDiv>
           <span
@@ -152,8 +252,22 @@ function SignUpPage() {
           ))}
         </SignUpMediaButtons>
         <TermsText>
-          By signing in or creating an account, you agree with our Terms &
-          conditions and Privacy policy
+          By signing in or creating an account, you agree with our
+          <TermsLink
+            onClick={() => {
+              setTermsClicked(!termsClicked);
+            }}
+          >
+            Terms & conditions
+          </TermsLink>{" "}
+          and
+          <TermsLink
+            onClick={() => {
+              setTermsClicked(!termsClicked);
+            }}
+          >
+            Privacy policy
+          </TermsLink>
         </TermsText>
       </SignUpFormContainer>
     </SignUpPageOverlay>
