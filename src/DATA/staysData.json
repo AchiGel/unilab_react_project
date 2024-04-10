@@ -1,42 +1,42 @@
 [
   {
-    "imgLink": "images/hotels.png",
+    "imgLink": "../images/hotels.png",
     "title": "Hotels"
   },
   {
-    "imgLink": "images/appartments.png",
+    "imgLink": "../images/appartments.png",
     "title": "Apartments"
   },
   {
-    "imgLink": "images/resorts.png",
+    "imgLink": "../images/resorts.png",
     "title": "Resorts"
   },
   {
-    "imgLink": "images/villas.png",
+    "imgLink": "../images/villas.png",
     "title": "Villas"
   },
   {
-    "imgLink": "images/appartments.png",
+    "imgLink": "../images/appartments.png",
     "title": "Apartments"
   },
   {
-    "imgLink": "images/villas.png",
+    "imgLink": "../images/villas.png",
     "title": "Villas"
   },
   {
-    "imgLink": "images/appartments.png",
+    "imgLink": "../images/appartments.png",
     "title": "Apartments"
   },
   {
-    "imgLink": "images/hotels.png",
+    "imgLink": "../images/hotels.png",
     "title": "Hotels"
   },
   {
-    "imgLink": "images/villas.png",
+    "imgLink": "../images/villas.png",
     "title": "Villas"
   },
   {
-    "imgLink": "images/hotels.png",
+    "imgLink": "../images/hotels.png",
     "title": "Hotels"
   }
 ]

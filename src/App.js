@@ -25,6 +25,14 @@ const router = createBrowserRouter(
         <Route path="Flights" element={<FlightsPage />} />
         <Route path="Stays" element={<StaysPage />} />
       </Route>
+      <Route
+        path="*"
+        element={
+          <div>
+            <h2>Sorry, the page doesn't exists!</h2>
+          </div>
+        }
+      />
     </Route>
   )
 );

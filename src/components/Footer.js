@@ -3,6 +3,7 @@ import insta from "../assets/icons/Vector.svg";
 import fb from "../assets/icons/fb.svg";
 import linkedIn from "../assets/icons/Li.svg";
 import paperPlane from "../assets/icons/Paper_Plane.png";
+import { NavLink } from "react-router-dom";
 
 const FooterRow = styled.footer`
   padding-top: 40px;
@@ -125,7 +126,9 @@ function Footer() {
           <FooterSpan size={"medium"}>Links</FooterSpan>
           <FooterLinksList>
             <li>
-              <FooterSpan size={"small"}>Home</FooterSpan>
+              <FooterSpan size={"small"}>
+                <NavLink to="/">Home</NavLink>
+              </FooterSpan>
             </li>
             <li>
               <FooterSpan size={"small"}>About us</FooterSpan>

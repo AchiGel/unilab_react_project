@@ -37,7 +37,7 @@ const SwipperButtons = styled.button`
   }
 `;
 
-function Offers({ data }) {
+function Offers({ data, height, header }) {
   const swiperRef = useRef(null);
 
   const goNext = () => {
@@ -53,7 +53,7 @@ function Offers({ data }) {
   };
   return (
     <section style={{ marginBottom: "60px" }}>
-      <OffersHeader>Popular Tour Offers</OffersHeader>
+      <OffersHeader>{header}</OffersHeader>
       <SwipperArrows>
         <SwipperButtons onClick={goPrev}>
           <img src={arrowLeft} alt="arrow" />
@@ -72,6 +72,7 @@ function Offers({ data }) {
         {data.map((item) => (
           <swiper-slide key={item.id}>
             <OfferCard
+              height={height}
               img={item.imgLink}
               title={item.title}
               descr={item.description}

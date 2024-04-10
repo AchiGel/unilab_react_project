@@ -10,7 +10,7 @@ export default function StaysPage() {
       <Select />
       <Select />
       <Button size="medium" buttonText="Search" />
-      <Offers data={staysData} />
+      <Offers height="none" header="Browse by property type" data={staysData} />
     </div>
   );
 }

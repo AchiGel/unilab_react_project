@@ -19,7 +19,7 @@ function Main() {
       <LandingBackground />
       <Services />
       <Video />
-      <Offers data={offersData} />
+      <Offers data={offersData} header="Popular Tour Offers" />
       <Blogs />
       <Book />
     </MainContainer>
