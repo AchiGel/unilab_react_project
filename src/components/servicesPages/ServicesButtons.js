@@ -6,6 +6,7 @@ const ServicesButtonsContainer = styled.div`
   align-items: center;
   gap: 40px;
   margin-bottom: 60px;
+  margin-top: 165px;
 `;
 
 export default function ServicesButtons() {
@@ -19,7 +20,7 @@ export default function ServicesButtons() {
   return (
     <ServicesButtonsContainer>
       {buttonText.map((item, index) => (
-        <Button key={index} buttonText={item} size="small" />
+        <Button toRedirect={item} key={index} buttonText={item} size="small" />
       ))}
     </ServicesButtonsContainer>
   );

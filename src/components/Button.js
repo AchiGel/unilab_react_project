@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 const StyledButton = styled.button`
@@ -30,19 +31,27 @@ const StyledButton = styled.button`
         font-weight: 500;
         transition: all 0.2s ease;
       `;
-    } else if ("small") {
+    } else if (size === "small") {
       return css`
         border: none;
         outline: none;
         cursor: pointer;
-        color: white;
+        color: #424244;
         padding: 15px 30px;
-        background-color: #ff6700;
+        background-color: transparent;
         border-radius: 20px;
         font-family: "Roboto";
         font-size: 24px;
         font-weight: 500;
         transition: all 0.2s ease;
+        &:focus {
+          color: white;
+          background-color: #ff6700;
+        }
+        &:active {
+          color: white;
+          background-color: #ff6700;
+        }
       `;
     } else {
       return css`
@@ -66,8 +75,12 @@ const StyledButton = styled.button`
   }
 `;
 
-function Button({ buttonText, size }) {
-  return <StyledButton size={size}>{buttonText}</StyledButton>;
+function Button({ toRedirect, buttonText, size }) {
+  return (
+    <StyledButton size={size}>
+      <NavLink to={toRedirect}>{buttonText}</NavLink>
+    </StyledButton>
+  );
 }
 
 export default Button;

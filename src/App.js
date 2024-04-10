@@ -10,8 +10,9 @@ import {
   Route,
 } from "react-router-dom";
 
-import RootLayout from "./laouts/RootLayout";
-import ServicesPage from "./components/servicesPages/ServicesPage";
+import RootLayout from "./layouts/RootLayout";
+import ServicesLayout from "./layouts/ServicesLayout";
+import FlightsPage from "./components/servicesPages/FlightsPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,7 +20,9 @@ const router = createBrowserRouter(
       <Route index element={<Main />} />
       <Route path="sign-in" element={<SignInPage />} />
       <Route path="sign-up" element={<SignUpPage />} />
-      <Route path="services" element={<ServicesPage />} />
+      <Route path="services" element={<ServicesLayout />}>
+        <Route path="Flights" element={<FlightsPage />} />
+      </Route>
     </Route>
   )
 );

@@ -97,7 +97,6 @@ const NavbarUser = styled.img`
 
 function Navbar({ scrolled, openSignPopUp }) {
   const location = useLocation();
-  console.log(location.pathname);
 
   return (
     <NavbarNavigation scrolled={scrolled}>
@@ -114,7 +113,9 @@ function Navbar({ scrolled, openSignPopUp }) {
             </NavbarItem>
             <NavbarItem>About us</NavbarItem>
             <NavbarItem>Blogs</NavbarItem>
-            <NavbarItem>Our services</NavbarItem>
+            <NavbarItem>
+              <NavLink to="/services">Our services</NavLink>
+            </NavbarItem>
             <NavbarItem>Our offers</NavbarItem>
             <NavbarItem onClick={openSignPopUp}>
               <NavbarUser src={user} scrolled={scrolled} />
@@ -162,7 +163,8 @@ function Navbar({ scrolled, openSignPopUp }) {
           </NavbarItems>
         </DarkNavbar>
       )}
-      {location.pathname === "/services" && (
+      {(location.pathname === "/services" ||
+        location.pathname === "/services/Flights") && (
         <DarkNavbar>
           <div className="navbar-logo">
             <NavLink to="/">
@@ -177,7 +179,9 @@ function Navbar({ scrolled, openSignPopUp }) {
             </NavbarItem>
             <NavbarItem style={{ color: "#424244" }}>About us</NavbarItem>
             <NavbarItem style={{ color: "#424244" }}>Blogs</NavbarItem>
-            <NavbarItem style={{ color: "#424244" }}>Our services</NavbarItem>
+            <NavbarItem style={{ color: "#424244" }}>
+              <NavLink to="/services">Our services</NavLink>
+            </NavbarItem>
             <NavbarItem style={{ color: "#424244" }}>Our offers</NavbarItem>
             <NavbarItem onClick={openSignPopUp}>
               <NavbarUser
