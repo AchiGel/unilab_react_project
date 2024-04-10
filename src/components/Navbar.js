@@ -164,7 +164,8 @@ function Navbar({ scrolled, openSignPopUp }) {
         </DarkNavbar>
       )}
       {(location.pathname === "/services" ||
-        location.pathname === "/services/Flights") && (
+        location.pathname === "/services/Flights" ||
+        location.pathname === "/services/Stays") && (
         <DarkNavbar>
           <div className="navbar-logo">
             <NavLink to="/">

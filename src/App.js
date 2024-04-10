@@ -13,6 +13,7 @@ import {
 import RootLayout from "./layouts/RootLayout";
 import ServicesLayout from "./layouts/ServicesLayout";
 import FlightsPage from "./components/servicesPages/FlightsPage";
+import StaysPage from "./components/servicesPages/StaysPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route path="sign-up" element={<SignUpPage />} />
       <Route path="services" element={<ServicesLayout />}>
         <Route path="Flights" element={<FlightsPage />} />
+        <Route path="Stays" element={<StaysPage />} />
       </Route>
     </Route>
   )

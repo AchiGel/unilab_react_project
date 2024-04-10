@@ -7,6 +7,8 @@ import Book from "./Book";
 import styled from "styled-components";
 import LandingBackground from "./LandingBackground";
 
+import offersData from "../DATA/offersCards.json";
+
 const MainContainer = styled.main`
   background-color: #f6f6f6;
 `;
@@ -17,7 +19,7 @@ function Main() {
       <LandingBackground />
       <Services />
       <Video />
-      <Offers />
+      <Offers data={offersData} />
       <Blogs />
       <Book />
     </MainContainer>

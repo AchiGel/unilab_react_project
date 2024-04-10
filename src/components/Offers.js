@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import arrowLeft from "../assets/icons/Chevron_LEFT.png";
 import arrowRight from "../assets/icons/Chevron_Right.png";
-import offersData from "../DATA/offersCards.json";
 import OfferCard from "../components/OfferCard";
 import { useRef } from "react";
 
@@ -38,7 +37,7 @@ const SwipperButtons = styled.button`
   }
 `;
 
-function Offers() {
+function Offers({ data }) {
   const swiperRef = useRef(null);
 
   const goNext = () => {
@@ -70,7 +69,7 @@ function Offers() {
         speed="500"
         css-mode="true"
       >
-        {offersData.map((item) => (
+        {data.map((item) => (
           <swiper-slide key={item.id}>
             <OfferCard
               img={item.imgLink}
