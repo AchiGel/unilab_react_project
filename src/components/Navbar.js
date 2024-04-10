@@ -23,6 +23,21 @@ const NavbarNavigation = styled.nav`
     `};
 `;
 
+const DarkNavbar = styled.nav`
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  height: 105px;
+  width: 100%;
+  margin-inline: -8.8%;
+  padding-inline: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  background-color: #eae9e9;
+`;
+
 const NavbarLogo = styled.button`
   color: #fff;
   font-family: "Kalnia";
@@ -108,7 +123,7 @@ function Navbar({ scrolled, openSignPopUp }) {
         </>
       )}
       {location.pathname === "/sign-in" && (
-        <>
+        <DarkNavbar>
           <div className="navbar-logo">
             <NavLink to="/">
               <NavbarLogo style={{ color: "#424244" }}>ExploreEra</NavbarLogo>
@@ -125,10 +140,10 @@ function Navbar({ scrolled, openSignPopUp }) {
               />
             </NavbarItem>
           </NavbarItems>
-        </>
+        </DarkNavbar>
       )}
       {location.pathname === "/sign-up" && (
-        <>
+        <DarkNavbar>
           <div className="navbar-logo">
             <NavLink to="/">
               <NavbarLogo style={{ color: "#424244" }}>ExploreEra</NavbarLogo>
@@ -145,7 +160,37 @@ function Navbar({ scrolled, openSignPopUp }) {
               />
             </NavbarItem>
           </NavbarItems>
-        </>
+        </DarkNavbar>
+      )}
+      {location.pathname === "/services" && (
+        <DarkNavbar>
+          <div className="navbar-logo">
+            <NavLink to="/">
+              <NavbarLogo style={{ color: "#424244" }} scrolled={scrolled}>
+                ExploreEra
+              </NavbarLogo>
+            </NavLink>
+          </div>
+          <NavbarItems scrolled={scrolled}>
+            <NavbarItem style={{ color: "#424244" }}>
+              <NavLink to="/">Home</NavLink>
+            </NavbarItem>
+            <NavbarItem style={{ color: "#424244" }}>About us</NavbarItem>
+            <NavbarItem style={{ color: "#424244" }}>Blogs</NavbarItem>
+            <NavbarItem style={{ color: "#424244" }}>Our services</NavbarItem>
+            <NavbarItem style={{ color: "#424244" }}>Our offers</NavbarItem>
+            <NavbarItem onClick={openSignPopUp}>
+              <NavbarUser
+                style={{
+                  filter:
+                    "invert(24%) sepia(8%) saturate(182%) hue-rotate(202deg) brightness(50%) contrast(93%)",
+                }}
+                src={user}
+                scrolled={scrolled}
+              />
+            </NavbarItem>
+          </NavbarItems>
+        </DarkNavbar>
       )}
     </NavbarNavigation>
   );

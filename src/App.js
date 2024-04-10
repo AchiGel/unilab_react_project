@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 
 import RootLayout from "./laouts/RootLayout";
+import ServicesPage from "./components/servicesPages/ServicesPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route index element={<Main />} />
       <Route path="sign-in" element={<SignInPage />} />
       <Route path="sign-up" element={<SignUpPage />} />
+      <Route path="services" element={<ServicesPage />} />
     </Route>
   )
 );
