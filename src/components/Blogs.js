@@ -11,7 +11,7 @@ const BlogsHeader = styled.h2`
 
 const BlogsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
   column-gap: 20px;
   row-gap: 40px;
 `;

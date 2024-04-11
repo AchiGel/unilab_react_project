@@ -3,10 +3,8 @@ import arrowLeft from "../assets/icons/Chevron_LEFT.png";
 import arrowRight from "../assets/icons/Chevron_Right.png";
 import OfferCard from "../components/OfferCard";
 import { useRef } from "react";
-
-// import function to register Swiper custom elements
 import { register } from "swiper/element/bundle";
-// register Swiper custom elements
+
 register();
 
 const OffersHeader = styled.h2`
@@ -51,6 +49,20 @@ function Offers({ data, height, header }) {
       swiperRef.current.swiper.slidePrev();
     }
   };
+
+  const swiperParams = {
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  };
+
+  Object.assign(swiperRef, swiperParams);
+
   return (
     <section style={{ marginBottom: "60px" }}>
       <OffersHeader>{header}</OffersHeader>

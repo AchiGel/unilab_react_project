@@ -12,6 +12,17 @@ const FooterRow = styled.footer`
   background-color: #eae9e9;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 800px) {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+  }
+  @media screen and (max-width: 560px) {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+    justify-content: center;
+  }
 `;
 
 const FooterColumn = styled.div`

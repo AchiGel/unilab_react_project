@@ -20,6 +20,11 @@ const BookSelectGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
   row-gap: 40px;
   column-gap: 80px;
+  @media screen and (max-width: 560px) {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+  }
 `;
 
 const options = [

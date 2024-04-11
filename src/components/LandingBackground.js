@@ -40,12 +40,18 @@ const HeaderOffer = styled.div`
 const Heading3 = styled.h3`
   font-size: 40px;
   font-weight: 500;
+  @media screen and (max-width: 800px) {
+    font-size: 24px;
+  }
 `;
 
 const Heading2 = styled.h2`
   font-size: 64px;
   font-weight: 600;
   letter-spacing: 6.4px;
+  @media screen and (max-width: 800px) {
+    font-size: 30px;
+  }
 `;
 
 function LandingBackground() {

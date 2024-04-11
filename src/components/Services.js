@@ -40,6 +40,11 @@ const ServicesCards = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 20px;
+  @media screen and (max-width: 900px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
+    justify-items: center;
+  }
 `;
 
 function Services() {
