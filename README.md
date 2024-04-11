@@ -15,6 +15,15 @@ Once the project is running, users can:
 - Authentication and user account management.
 - Responsive design for seamless browsing on desktop and mobile devices.
 
+## Technologies used
+
+- React.js
+- React-router-dom
+- Styled-components
+- Swiper.js
+- React-select
+- React-hook-form
+
 ## Demo
 
 Check out the live demo [https://unilab-react-project.vercel.app/]
