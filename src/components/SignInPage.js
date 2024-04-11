@@ -5,7 +5,9 @@ import googleIcon from "../assets/icons/google.png";
 import gmailIcon from "../assets/icons/gmail.png";
 import Button from "./Button";
 import TermsModal from "./TermsModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const SignInPageOverlay = styled.div`
   width: 100%;
@@ -99,38 +101,83 @@ const TermsLink = styled.span`
   cursor: pointer;
 `;
 
+const ErrorMessage = styled.span`
+  margin-left: 20px;
+  color: #f00;
+  font-size: 16px;
+  font-weight: 400;
+`;
+
 function SignInPage() {
   const icons = [fbIcon, appleIcon, googleIcon, gmailIcon];
 
   const [termsClicked, setTermsClicked] = useState(false);
+
+  const [formData, setFormData] = useState({});
+
+  useEffect(() => {
+    console.log(formData);
+    localStorage.setItem("email", formData.email);
+    localStorage.setItem("password", formData.password);
+    localStorage.setItem("isLoggedIn", true);
+  }, [formData]);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   function closeModal() {
     setTermsClicked(false);
     document.body.classList.remove("modal-open");
   }
 
-  function handleLoggeIn() {
-    localStorage.setItem("isLoggedIn", true);
-  }
+  const onSubmit = (data) => {
+    setFormData(data);
+    alert("Logged in successfully");
+    navigate("/services");
+  };
+
+  const navigate = useNavigate();
 
   return (
     <SignInPageOverlay>
       {termsClicked && <TermsModal closeModal={closeModal} />}
       <SignInFormContainer>
-        <SignInForm onSubmit={handleLoggeIn}>
+        <SignInForm onSubmit={handleSubmit(onSubmit)}>
           <SignInFormLabel>
             <SignInFormLabelSpan>Email</SignInFormLabelSpan>
             <SignInFormInput
+              {...register("email", {
+                required: "Email is required",
+                validate: (value) => {
+                  if (!value.includes("@")) {
+                    return "Email must include @";
+                  }
+                },
+              })}
               type="email"
               placeholder="Enter your email address"
             />
           </SignInFormLabel>
+          {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
           <SignInFormLabel>
             <SignInFormLabelSpan>Password</SignInFormLabelSpan>
             <SignInFormInput
+              {...register("password", {
+                required: "password is required",
+                minLength: {
+                  value: 8,
+                  message: "Password must have at least 8 characters",
+                },
+              })}
               type="password"
               placeholder="Enter your password"
             />
+            {errors.password && (
+              <ErrorMessage>{errors.password.message}</ErrorMessage>
+            )}
           </SignInFormLabel>
           <Button type="submit" size="sign" buttonText="Continue" />
         </SignInForm>

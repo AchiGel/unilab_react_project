@@ -120,11 +120,16 @@ function SignUpPage() {
 
   useEffect(() => {
     console.log(formData);
-    localStorage.setItem("formData", [formData.email, formData.password]);
+    localStorage.setItem("name", formData.name);
+    localStorage.setItem("lastName", formData.lastName);
+    localStorage.setItem("email", formData.email);
+    localStorage.setItem("password", formData.password);
+    localStorage.setItem("isLoggedIn", true);
   }, [formData]);
 
   const onSubmit = (data) => {
     setFormData(data);
+    alert("Signed Up successfully");
   };
 
   function closeModal() {

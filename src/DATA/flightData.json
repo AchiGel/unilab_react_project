@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Georgian Airlines",
+    "takeOff": 12,
+    "landing": 19,
+    "price": 600,
+    "stops": 1
+  },
+  {
+    "id": 2,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "American Airlines",
+    "takeOff": 10,
+    "landing": 16,
+    "price": 550,
+    "stops": 2
+  },
+  {
+    "id": 3,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "British Airways",
+    "takeOff": 11,
+    "landing": 18,
+    "price": 620,
+    "stops": 0
+  },
+  {
+    "id": 4,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Lufthansa",
+    "takeOff": 13,
+    "landing": 20,
+    "price": 650,
+    "stops": 2
+  },
+  {
+    "id": 5,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Emirates",
+    "takeOff": 9,
+    "landing": 15,
+    "price": 700,
+    "stops": 1
+  },
+  {
+    "id": 6,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Qatar Airways",
+    "takeOff": 14,
+    "landing": 21,
+    "price": 680,
+    "stops": 0
+  },
+  {
+    "id": 7,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Air France",
+    "takeOff": 10,
+    "landing": 17,
+    "price": 590,
+    "stops": 1
+  },
+  {
+    "id": 8,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Cathay Pacific",
+    "takeOff": 12,
+    "landing": 20,
+    "price": 660,
+    "stops": 2
+  },
+  {
+    "id": 9,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Singapore Airlines",
+    "takeOff": 11,
+    "landing": 19,
+    "price": 720,
+    "stops": 0
+  },
+  {
+    "id": 10,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "All Nippon Airways",
+    "takeOff": 13,
+    "landing": 21,
+    "price": 640,
+    "stops": 1
+  },
+  {
+    "id": 11,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Qantas",
+    "takeOff": 10,
+    "landing": 18,
+    "price": 630,
+    "stops": 2
+  },
+  {
+    "id": 12,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Swiss International Air Lines",
+    "takeOff": 11,
+    "landing": 19,
+    "price": 670,
+    "stops": 0
+  },
+  {
+    "id": 13,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Turkish Airlines",
+    "takeOff": 12,
+    "landing": 20,
+    "price": 610,
+    "stops": 1
+  },
+  {
+    "id": 14,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Virgin Atlantic",
+    "takeOff": 9,
+    "landing": 16,
+    "price": 590,
+    "stops": 2
+  },
+  {
+    "id": 15,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Air Canada",
+    "takeOff": 13,
+    "landing": 20,
+    "price": 660,
+    "stops": 1
+  },
+  {
+    "id": 16,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Korean Air",
+    "takeOff": 10,
+    "landing": 18,
+    "price": 680,
+    "stops": 0
+  },
+  {
+    "id": 17,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Etihad Airways",
+    "takeOff": 11,
+    "landing": 19,
+    "price": 710,
+    "stops": 2
+  },
+  {
+    "id": 18,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Southwest Airlines",
+    "takeOff": 12,
+    "landing": 20,
+    "price": 550,
+    "stops": 0
+  },
+  {
+    "id": 19,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Air New Zealand",
+    "takeOff": 9,
+    "landing": 17,
+    "price": 670,
+    "stops": 1
+  },
+  {
+    "id": 20,
+    "airlinesImg": "../images/georgianAirlines.png",
+    "airlines": "Ryanair",
+    "takeOff": 13,
+    "landing": 21,
+    "price": 500,
+    "stops": 0
+  }
+]
