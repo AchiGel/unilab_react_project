@@ -7,6 +7,9 @@ const ServicesButtonsContainer = styled.div`
   gap: 40px;
   margin-bottom: 60px;
   margin-top: 165px;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export default function ServicesButtons() {

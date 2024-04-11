@@ -28,6 +28,9 @@ const SignInFormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const SignInForm = styled.form`
@@ -201,7 +204,7 @@ function SignInPage() {
         <SignInMediaButtons>
           {icons.map((el, index) => (
             <SignInMediaButton key={index}>
-              <img src={el} alt={el} />
+              <img style={{ width: "100%" }} src={el} alt={el} />
             </SignInMediaButton>
           ))}
         </SignInMediaButtons>

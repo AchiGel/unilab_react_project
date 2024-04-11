@@ -28,6 +28,9 @@ const FlightsPageSearchBottom = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export default function FlightsPage() {

@@ -28,6 +28,9 @@ const SignUpFormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const SignUpForm = styled.form`
@@ -255,7 +258,7 @@ function SignUpPage() {
         <SignUpMediaButtons>
           {icons.map((el, index) => (
             <SignUpMediaButton key={index}>
-              <img src={el} alt={el} />
+              <img style={{ width: "100%" }} src={el} alt={el} />
             </SignUpMediaButton>
           ))}
         </SignUpMediaButtons>
