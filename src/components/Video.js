@@ -16,7 +16,7 @@ function Video() {
       <video
         style={{ borderRadius: "20px", objectFit: "cover" }}
         width="100%"
-        height="724.377"
+        height="45%"
         controls
       >
         <source src={video} type="video/mp4" />

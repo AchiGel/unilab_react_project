@@ -4,6 +4,8 @@ import appleIcon from "../assets/icons/apple.png";
 import googleIcon from "../assets/icons/google.png";
 import gmailIcon from "../assets/icons/gmail.png";
 import Button from "./Button";
+import TermsModal from "./TermsModal";
+import { useState } from "react";
 
 const SignInPageOverlay = styled.div`
   width: 100%;
@@ -90,13 +92,32 @@ const TermsText = styled.span`
   font-weight: 400;
 `;
 
+const TermsLink = styled.span`
+  color: #c85100;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+`;
+
 function SignInPage() {
   const icons = [fbIcon, appleIcon, googleIcon, gmailIcon];
 
+  const [termsClicked, setTermsClicked] = useState(false);
+
+  function closeModal() {
+    setTermsClicked(false);
+    document.body.classList.remove("modal-open");
+  }
+
+  function handleLoggeIn() {
+    localStorage.setItem("isLoggedIn", true);
+  }
+
   return (
     <SignInPageOverlay>
+      {termsClicked && <TermsModal closeModal={closeModal} />}
       <SignInFormContainer>
-        <SignInForm>
+        <SignInForm onSubmit={handleLoggeIn}>
           <SignInFormLabel>
             <SignInFormLabelSpan>Email</SignInFormLabelSpan>
             <SignInFormInput
@@ -111,7 +132,7 @@ function SignInPage() {
               placeholder="Enter your password"
             />
           </SignInFormLabel>
-          <Button size="sign" buttonText="Continue" />
+          <Button type="submit" size="sign" buttonText="Continue" />
         </SignInForm>
         <BorderDiv>
           <span
@@ -138,8 +159,22 @@ function SignInPage() {
           ))}
         </SignInMediaButtons>
         <TermsText>
-          By signing in or creating an account, you agree with our Terms &
-          conditions and Privacy policy
+          By signing in or creating an account, you agree with our
+          <TermsLink
+            onClick={() => {
+              setTermsClicked(!termsClicked);
+            }}
+          >
+            Terms & conditions
+          </TermsLink>{" "}
+          and
+          <TermsLink
+            onClick={() => {
+              setTermsClicked(!termsClicked);
+            }}
+          >
+            Privacy policy
+          </TermsLink>
         </TermsText>
       </SignInFormContainer>
     </SignInPageOverlay>

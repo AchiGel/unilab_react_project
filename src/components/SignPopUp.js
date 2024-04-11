@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -27,15 +28,32 @@ const SignPopUpButtons = styled.button`
 `;
 
 function SignPopUp({ signClicked, setSignClicked }) {
+  const [loggedInStatus, setLoggedInStatus] = useState(false);
+
+  useEffect(() => {
+    setLoggedInStatus(localStorage.isLoggedIn);
+  }, [loggedInStatus]);
+
   return (
     <SignPopUpContainer>
-      <SignPopUpButtons onClick={() => setSignClicked(!signClicked)}>
-        <NavLink to="sign-in">Sign in</NavLink>
-      </SignPopUpButtons>
-      <SignPopUpButtons onClick={() => setSignClicked(!signClicked)}>
-        <NavLink to="sign-up">Sign up</NavLink>
-      </SignPopUpButtons>
-      <SignPopUpButtons>Sign out</SignPopUpButtons>
+      {loggedInStatus ? (
+        <SignPopUpButtons
+          onClick={() => {
+            localStorage.removeItem("isLoggedIn");
+          }}
+        >
+          Sign out
+        </SignPopUpButtons>
+      ) : (
+        <>
+          <SignPopUpButtons onClick={() => setSignClicked(!signClicked)}>
+            <NavLink to="sign-in">Sign in</NavLink>
+          </SignPopUpButtons>
+          <SignPopUpButtons onClick={() => setSignClicked(!signClicked)}>
+            <NavLink to="sign-up">Sign up</NavLink>
+          </SignPopUpButtons>
+        </>
+      )}
     </SignPopUpContainer>
   );
 }
