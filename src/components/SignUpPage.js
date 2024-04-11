@@ -6,6 +6,7 @@ import gmailIcon from "../assets/icons/gmail.png";
 import Button from "./Button";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import TermsModal from "./TermsModal";
 
 const SignUpPageOverlay = styled.div`
@@ -111,6 +112,7 @@ function SignUpPage() {
   const icons = [fbIcon, appleIcon, googleIcon, gmailIcon];
   const [formData, setFormData] = useState({});
   const [termsClicked, setTermsClicked] = useState(false);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -119,7 +121,6 @@ function SignUpPage() {
   } = useForm();
 
   useEffect(() => {
-    console.log(formData);
     localStorage.setItem("name", formData.name);
     localStorage.setItem("lastName", formData.lastName);
     localStorage.setItem("email", formData.email);
@@ -130,6 +131,7 @@ function SignUpPage() {
   const onSubmit = (data) => {
     setFormData(data);
     alert("Signed Up successfully");
+    navigate("/services");
   };
 
   function closeModal() {
@@ -230,6 +232,7 @@ function SignUpPage() {
               <ErrorMessage>{errors.passwordConfirm.message}</ErrorMessage>
             )}
           </SignUpFormLabel>
+          <input type="file" />
           <Button type="submit" buttonText="Continue" size="sign" />
         </SignUpForm>
         <BorderDiv>
